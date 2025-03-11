@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Interest Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Include the Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Include jsPDF and SheetJS libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💸 Smart Interest Calculator 💸</h1>
+        </div>
+        <div class="form-container">
+            <label>Starting Capital (€):</label>
+            <input type="number" id="startingCapital" placeholder="Enter starting capital">
+
+            <label>Monthly Investment (€):</label>
+            <input type="number" id="monthlyInvestment" placeholder="Enter monthly investment">
+
+            <label>Annual Interest Rate (%):</label>
+            <input type="number" id="annualInterestRate" placeholder="Enter annual interest rate">
+
+            <label>Years of Investment:</label>
+            <input type="number" id="yearsOfInvestment" placeholder="Enter years of investment">
+
+            <label>Inflation Rate (%):</label>
+            <input type="number" id="inflationRate" placeholder="Enter inflation rate">
+
+            <button id="calculateButton">💰 Calculate</button>
+        </div>
+
+        <!-- This is where the results will be displayed -->
+        <div id="results">
+            <!-- Results will be populated here dynamically by JavaScript -->
+        </div>
+
+        <!-- Add canvas elements for the graphs -->
+        <div class="chart-container">
+            <canvas id="investmentChart" width="400" height="200"></canvas>
+            <canvas id="realValueChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Add Export Buttons Below the Results Section -->
+        <div id="exportButtons">
+            <button id="exportPdfButton">📄 Export Results as PDF</button>
+            <button id="exportExcelButton">📊 Export Results as Excel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
